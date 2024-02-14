@@ -109,7 +109,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
                 quote! {
 
                     #[derive(Debug, Clone)]
-                    struct #structinfo {
+                    pub struct #structinfo {
                         field_names: Vec<String>,
                         pub field_types: Vec<String>,
                         struct_name: String
@@ -117,7 +117,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
 
                     #[derive(Debug, PartialEq, PartialOrd, Clone)]
                     #[allow(non_camel_case_types)]
-                    enum #enumname{
+                    pub enum #enumname{
                         #(#idents_enum(#tys_enum)),*
                     }
 
