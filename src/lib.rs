@@ -121,7 +121,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
                         #(#idents_enum(#tys_enum)),*
                     }
 
-                    trait #gettersetter<T> {
+                    pub trait #gettersetter<T> {
                         fn get(&self, field_string: &String) -> Result<&T, String>;
                         fn get_mut(&mut self, field_string: &String) -> Result<&mut T, String>;
                         fn take(&mut self, field_string: &String) -> Result<T, String>;
