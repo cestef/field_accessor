@@ -110,9 +110,9 @@ pub fn derive(input: TokenStream) -> TokenStream {
 
                     #[derive(Debug, Clone)]
                     pub struct #structinfo {
-                        field_names: Vec<String>,
+                        pub field_names: Vec<String>,
                         pub field_types: Vec<String>,
-                        struct_name: String
+                        pub struct_name: String
                     }
 
                     #[derive(Debug, PartialEq, PartialOrd, Clone)]
