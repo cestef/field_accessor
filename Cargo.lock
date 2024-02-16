@@ -3,7 +3,7 @@
 version = 3
 
 [[package]]
-name = "field_accessor"
+name = "field_accessor_pub"
 version = "0.5.2"
 dependencies = [
  "quote",
