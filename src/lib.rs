@@ -130,32 +130,32 @@ pub fn derive(input: TokenStream) -> TokenStream {
                     #(
                         impl #gettersetter<#set_tys> for #ident {
                             fn get(&self, field_string: &str) -> Result<&#get_tys, String> {
-                                match &**field_string {
+                                match &*field_string {
                                     #get_quotes,
                                     _ => Err(format!("invalid field name to get '{}'", field_string)),
                                 }
                             }
                             fn get_mut(&mut self, field_string: &str) -> Result<&mut #get_tys, String> {
-                                match &**field_string {
+                                match &*field_string {
                                     #get_mut_quotes,
                                     _ => Err(format!("invalid field name to get_mut '{}'", field_string)),
                                 }
                             }
                             fn take(&mut self, field_string: &str) -> Result<#take_tys, String> {
-                                match &**field_string {
+                                match &*field_string {
                                     #take_quotes,
                                     _ => Err(format!("invalid field name to take '{}'", field_string)),
                                 }
                             }
                             fn replace(&mut self, field_string: &str, src: #replace_tys) -> Result<#replace_tys, String> {
-                                match &**field_string {
+                                match &*field_string {
                                     #replace_quotes,
                                     _ => Err(format!("invalid field name to replace '{}'", field_string)),
                                 }
                             }
 
                             fn set(&mut self, field_string: &str, value: #set_tys) -> Result<(), String>{
-                                match &**field_string {
+                                match &*field_string {
                                     #set_quotes,
                                     _ => Err(format!("invalid field name to set '{}'", field_string)),
                                 }
@@ -166,7 +166,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
                     impl #ident {
 
                         pub fn swap(&mut self, field_string: &str, field_string_y: &str) -> Result<(), String> {
-                            match (&**field_string, &**field_string_y) {
+                            match (&*field_string, &*field_string_y) {
                                 #(
                                     (stringify!(#swap_ident), stringify!(#swap_ident2)) => {
                                         std::mem::swap::<#swap_tys>(&mut self.#swap_ident, &mut self.#swap_ident2);
@@ -178,7 +178,7 @@ pub fn derive(input: TokenStream) -> TokenStream {
                         }
 
                         pub fn getenum(&self, field_string: &str) -> Result<#enumname, String> {
-                            match &**field_string {
+                            match &*field_string {
                                 #(stringify!(#idents_getenum) => {
                                     Ok(#enumname::#idents_getenum(self.#idents_getenum.clone()))
                                 }),*

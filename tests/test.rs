@@ -20,7 +20,7 @@ mod tests_simple_struct {
         let value_to_update = "Jiro".to_string();
         dog.set(&field_name, value_to_update).unwrap();
         let value_on_error;
-        let fieldvalue: &String = match dog.get(&"invalid_name".to_string()) {
+        let fieldvalue: &String = match dog.get("invalid_name") {
             Ok(value) => value,
             Err(_) => {
                 value_on_error = "Ken".to_string();
@@ -37,7 +37,7 @@ mod tests_simple_struct {
             age: 3,
             life_expectancy: 9,
         };
-        let v: &mut String = dog.get_mut(&"name".to_string()).unwrap();
+        let v: &mut String = dog.get_mut("name").unwrap();
         *v = "Jiro".to_string();
         assert_eq!(dog.name, "Jiro".to_string());
     }
@@ -255,7 +255,7 @@ mod tests_nested_structs {
         };
         let field_name = "name".to_string();
         let name: &String = my_user.get(&field_name).unwrap();
-        let userdata: &UserData = my_user.get(&"data".to_string()).unwrap();
+        let userdata: &UserData = my_user.get("data").unwrap();
         assert_eq!(*name, "aGoodName".to_string());
         assert_eq!(*userdata.some_field, "some value".to_string());
     }
