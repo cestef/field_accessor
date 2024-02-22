@@ -1,4 +1,4 @@
-# field_accessor
+# field_accessor_pub
 
 <img src="img/definition.gif" width="55%">
 
@@ -8,7 +8,7 @@ It can be good for you if you don't know which field you want when compiling. Th
 
 ```
 [dependencies]
-field_accessor = "0"
+field_accessor_pub = "0"
 ```
 
 ## About this macro
@@ -78,7 +78,7 @@ You can extract a struct's field names, types, and a struct name.
 ![run](img/run.gif)
 
 ```rust
-use field_accessor::FieldAccessor;
+use field_accessor_pub::FieldAccessor;
 
 #[derive(FieldAccessor)]
 struct Dog {

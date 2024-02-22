@@ -3,8 +3,8 @@ name = "field_accessor_pub"
 version = "0.5.2"
 edition = "2021"
 authors = ["Tomohiro Endo <europeanplaice@gmail.com>", "cstef"]
-description = "A procedural macro to get and set a struct field by String dynamically. This crate is a quick and dirty fork of field_accessor."
-repository = "https://github.com/europeanplaice/field_accessor"
+description = "A procedural macro to get and set a struct field by String dynamically. This crate is a quick and dirty fork of field_accessor_pub."
+repository = "https://github.com/europeanplaice/field_accessor_pub"
 readme = "readme.md"
 license = "MIT"
 

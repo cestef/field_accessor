@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests_simple_struct {
-    use field_accessor::FieldAccessor;
+    use field_accessor_pub::FieldAccessor;
 
     #[derive(FieldAccessor)]
     pub struct Dog {
@@ -92,7 +92,7 @@ mod tests_simple_struct {
 
 #[cfg(test)]
 mod test_mem {
-    use field_accessor::FieldAccessor;
+    use field_accessor_pub::FieldAccessor;
 
     #[derive(FieldAccessor)]
     pub struct Dog {
@@ -150,7 +150,7 @@ mod test_mem {
 
 #[cfg(test)]
 mod tests_vector_type {
-    use field_accessor::FieldAccessor;
+    use field_accessor_pub::FieldAccessor;
 
     #[derive(FieldAccessor)]
     pub struct Dog {
@@ -179,7 +179,7 @@ mod tests_vector_type {
 #[cfg(test)]
 mod tests_getstructinfo {
 
-    use field_accessor::FieldAccessor;
+    use field_accessor_pub::FieldAccessor;
 
     #[derive(FieldAccessor)]
     pub struct Dog {
@@ -211,7 +211,7 @@ mod tests_multiple_derive {
 
     #[test]
     fn test_multiple_derive() {
-        use field_accessor::FieldAccessor;
+        use field_accessor_pub::FieldAccessor;
 
         #[derive(FieldAccessor)]
         struct Test {
@@ -230,7 +230,7 @@ mod tests_nested_structs {
 
     #[test]
     fn test_nested_structs() {
-        use field_accessor::FieldAccessor;
+        use field_accessor_pub::FieldAccessor;
 
         // Todo Find an elegant way to use FieldAccessor without passing these traits to derive.
         #[derive(PartialEq, PartialOrd, Default, Clone, Debug)]
