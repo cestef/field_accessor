@@ -43,12 +43,10 @@ pub fn derive(input: TokenStream) -> TokenStream {
                         .map(|f| &f.ident)
                         .zip(named.iter().map(|f| &f.ty))
                     {
-                        if outer_type == inner_type {
-                            if outer_ident != inner_ident {
-                                swap_tys.push(inner_type);
-                                swap_ident.push(outer_ident.clone());
-                                swap_ident2.push(inner_ident.clone());
-                            }
+                        if outer_type == inner_type && outer_ident != inner_ident {
+                            swap_tys.push(inner_type);
+                            swap_ident.push(outer_ident.clone());
+                            swap_ident2.push(inner_ident.clone());
                         }
                     }
                 }
